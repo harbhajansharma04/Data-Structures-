@@ -1,0 +1,36 @@
+# include <bits/stdc++.h>
+using namespace std;
+void swap(int *x, int *y)
+{
+    int temp;
+    *x=*y;
+    *y=temp;
+    
+}
+void selection(int n, int a[])
+{
+    int i,j,k;
+    for(int i=0;i<n-1;i++)
+    {
+        
+        for(j=k=i;j<n;j++)
+        {
+            if(a[j]<a[k])
+            {
+                k=j;
+            }
+        }
+        swap(a[i],a[k]);
+    }
+}
+int main()
+{
+    int a[]={8,6,3,2,5,4};
+    int n=6;
+    selection(n,a);
+    for(int i=0;i<n;i++)
+    {
+        cout<<a[i]<<" ";
+    }
+    return 0;
+}
