@@ -1,12 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-void swap(int *x, int *y)
-{
-    int temp=*x;
-    *x=*y;
-    *y=temp;
-    
-}
+
 void shellsort(int a[], int n)
 {
     int gap,i,j,temp;
