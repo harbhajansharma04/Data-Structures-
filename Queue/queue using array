@@ -1,0 +1,74 @@
+#include <bits/stdc++.h>
+using namespace std;
+int a[10];
+int front=-1;
+int rear=-1;
+void insert()
+{
+    int n;
+    if(rear==9)
+    {
+        cout<<"Queue is full";
+        
+    }
+    else if(rear==-1&&front==-1)
+    {
+        rear++;
+        front++;
+        cout<<"\nEnter value = ";
+        cin>>n;
+        a[front]=n;
+    }
+    else{
+        rear++;
+        cout<<"\nEnter value = ";
+        cin>>n;
+        a[rear]=n;
+        
+    }
+}
+void del()
+{
+    if(rear==-1&&front==-1)
+    {
+        cout<<"\nQueue is Empty";
+    }
+    else if(front==rear&&front!=-1)
+    {
+        cout<<"\nQueue is Empty";
+    }
+    else{
+        front++;
+    }
+}
+void display()
+{
+    for(int i=front;i<=rear;i++)
+    {
+        cout<<endl<<a[i];
+    }
+    cout<<endl;
+}
+int main()
+{
+    int n=0;
+    int choice;
+    do{
+        cout<<"\n1. Insert an element\n2. Delete an element\n3. Display all elements\n4. Exit\n\n";
+        cout<<"Enter Your choice = ";
+        cin>>choice;
+        switch(choice)
+        {
+            case 1: insert();
+                    break;
+            case 2: del();
+                    break;
+            case 3: display();
+                    break;
+            case 4: exit(0);
+        }
+        
+    }while(n==0);
+    
+    
+}
